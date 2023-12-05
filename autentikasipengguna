@@ -1,0 +1,34 @@
+package uas.prokom_02;
+import java.util.Scanner;
+
+public class UasProkom_02 {
+    public static void main(String[] args) {
+       
+        // Nilai username dan password yang telah ditentukan
+        String usernameYangDitetapkan = "kristina";
+        String passwordYangDitetapkan = "secret";
+
+        // Input username dan password dari pengguna
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Masukkan username: ");
+        String username = scanner.nextLine();
+
+        System.out.print("Masukkan password: ");
+        String password = scanner.nextLine();
+
+        // Autentikasi pengguna
+        if (username.equals(usernameYangDitetapkan) && password.equals(passwordYangDitetapkan)) {
+            System.out.println("Autentikasi Berhasil");
+        } else {
+            System.out.println("Autentikasi Gagal");
+        }
+
+        // Tutup scanner
+        scanner.close();
+    }
+}
+
+    
+    
+

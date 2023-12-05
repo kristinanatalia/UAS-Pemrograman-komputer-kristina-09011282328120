@@ -1,0 +1,74 @@
+package uasprokom_05;
+import java.util.Scanner;
+
+public class Uasprokom_04 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input dua bilangan
+        System.out.print("Masukkan bilangan pertama: ");
+        double bilangan1 = scanner.nextDouble();
+
+        System.out.print("Masukkan bilangan kedua: ");
+        double bilangan2 = scanner.nextDouble();
+
+        // Pilih operasi
+        System.out.println("Pilih operasi:");
+        System.out.println("1. Penjumlahan (+)");
+        System.out.println("2. Pengurangan (-)");
+        System.out.println("3. Perkalian (*)");
+        System.out.println("4. Pembagian (/)");
+
+        System.out.print("Masukkan nomor operasi: ");
+        int pilihanOperasi = scanner.nextInt();
+
+        // Panggil metode sesuai operasi yang dipilih
+        switch (pilihanOperasi) {
+            case 1:
+                hasilPenjumlahan(bilangan1, bilangan2);
+                break;
+            case 2:
+                hasilPengurangan(bilangan1, bilangan2);
+                break;
+            case 3:
+                hasilPerkalian(bilangan1, bilangan2);
+                break;
+            case 4:
+                hasilPembagian(bilangan1, bilangan2);
+                break;
+            default:
+                System.out.println("Operasi tidak valid.");
+        }
+
+        // Tutup scanner
+        scanner.close();
+    }
+
+    // Metode untuk operasi penjumlahan
+    public static void hasilPenjumlahan(double a, double b) {
+        System.out.println("Hasil Penjumlahan: " + (a + b));
+    }
+
+    // Metode untuk operasi pengurangan
+    public static void hasilPengurangan(double a, double b) {
+        System.out.println("Hasil Pengurangan: " + (a - b));
+    }
+
+    // Metode untuk operasi perkalian
+    public static void hasilPerkalian(double a, double b) {
+        System.out.println("Hasil Perkalian: " + (a * b));
+    }
+
+    // Metode untuk operasi pembagian
+    public static void hasilPembagian(double a, double b) {
+        if (b != 0) {
+            System.out.println("Hasil Pembagian: " + (a / b));
+        } else {
+            System.out.println("Tidak bisa melakukan pembagian oleh nol.");
+        }
+    }
+}
+
+    
+    
+

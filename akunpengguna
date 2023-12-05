@@ -1,0 +1,66 @@
+package uasprokom_08;
+import java.util.Scanner;
+
+public class Uasprokom_08 {
+    // Atribut akun
+    private String username;
+    private String password;
+    private boolean aktif;
+
+    // Konstruktor
+    public Uasprokom_08(String username, String password) {
+        this.username = username;
+        this.password = password;
+        this.aktif = false;
+    }
+
+    // Metode untuk menampilkan informasi akun
+    public void tampilkanInfoAkun() {
+        System.out.println("Informasi Akun:");
+        System.out.println("Username: " + username);
+        System.out.println("Password: " + "********"); // Menyembunyikan password
+        System.out.println("Status: " + (aktif ? "Aktif" : "Nonaktif"));
+    }
+
+    // Metode untuk mengaktifkan akun
+    public void aktifkanAkun() {
+        if (aktif) {
+            System.out.println("Akun sudah aktif.");
+        } else {
+            aktif = true;
+            System.out.println("Akun berhasil diaktifkan.");
+        }
+    }
+
+    // Metode untuk menonaktifkan akun
+    public void nonaktifkanAkun() {
+        if (!aktif) {
+            System.out.println("Akun sudah nonaktif.");
+        } else {
+            aktif = false;
+            System.out.println("Akun berhasil dinonaktifkan.");
+        }
+    }
+
+    // Metode main sebagai contoh penggunaan kelas AkunPengguna
+    public static void main(String[] args) {
+        // Membuat objek akun
+        Uasprokom_08 akun1 = new Uasprokom_08("christina", "jhonny orlando");
+
+        // Menampilkan informasi akun sebelum diaktifkan
+        akun1.tampilkanInfoAkun();
+
+        // Mengaktifkan akun
+        akun1.aktifkanAkun();
+
+        // Menampilkan informasi akun setelah diaktifkan
+        akun1.tampilkanInfoAkun();
+
+        // Menonaktifkan akun
+        akun1.nonaktifkanAkun();
+
+        // Menampilkan informasi akun setelah dinonaktifkan
+        akun1.tampilkanInfoAkun();
+    }
+}
+

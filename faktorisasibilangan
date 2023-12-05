@@ -1,0 +1,47 @@
+package uasprokom_04;
+import java.util.Scanner;
+
+    
+    public class Uasprokom_04 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input bilangan bulat positif
+        System.out.print("Masukkan bilangan bulat positif: ");
+        int bilangan = scanner.nextInt();
+
+        // Memanggil fungsi faktorisasi dan menampilkan hasil
+        System.out.println("Faktorisasi " + bilangan + ": " + faktorisasi(bilangan));
+
+        // Tutup scanner
+        scanner.close();
+    }
+
+    // Fungsi untuk melakukan faktorisasi suatu bilangan
+    public static String faktorisasi(int bilangan) {
+        StringBuilder hasilFaktorisasi = new StringBuilder();
+        int faktor = 2;
+
+        while (bilangan > 1) {
+            if (bilangan % faktor == 0) {
+                // Faktor ditemukan, tambahkan ke hasil dan kurangi bilangan
+                hasilFaktorisasi.append(faktor);
+                bilangan /= faktor;
+
+                // Jika masih ada faktor lain, tambahkan tanda '*'
+                if (bilangan > 1) {
+                    hasilFaktorisasi.append(" * ");
+                }
+            } else {
+                // Pindah ke faktor selanjutnya
+                faktor++;
+            }
+        }
+
+        return hasilFaktorisasi.toString();
+    }
+}
+
+    
+    
+

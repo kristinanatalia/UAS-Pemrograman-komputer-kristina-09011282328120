@@ -1,0 +1,43 @@
+package uasprokom_07;
+import java.util.Scanner;
+
+public class Uasprokom_07{
+    private String judul;
+    private String penulis;
+    private int tahunTerbit;
+    private boolean dipinjam;
+    
+    public Uasprokom_07(String judul, String penulis, int tahunTerbit) {
+        this.judul = judul;
+        this.penulis = penulis;
+        this.tahunTerbit = tahunTerbit;
+        this.dipinjam = false;
+    }
+    public void tampilkanInfoBuku() {
+        System.out.println("Informasi Buku:");
+        System.out.println("Judul: " + judul);
+        System.out.println("Penulis: " + penulis);
+        System.out.println("Tahun Terbit: " + tahunTerbit);
+        System.out.println("Status: " + (dipinjam ? "Sedang Dipinjam" : "Tersedia"));
+    }
+    public void pinjamBuku() {
+        if (dipinjam) {
+            System.out.println("Buku sedang dipinjam. Tidak dapat dipinjam lagi.");
+        } else {
+            dipinjam = true;
+            System.out.println("Buku berhasil dipinjam.");
+        }
+    }
+  
+    public static void main(String[] args) {
+        Uasprokom_07 buku1 = new Uasprokom_07("Mantapu jiwa", "Jerome polin", 2019);
+
+        // Menampilkan informasi buku sebelum dipinjam
+        buku1.tampilkanInfoBuku();
+        buku1.pinjamBuku();
+        buku1.tampilkanInfoBuku();
+    }
+}
+
+
+    
